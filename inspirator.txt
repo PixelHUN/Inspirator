@@ -1,5 +1,5 @@
 --Basis--
-Whenyou have a $noun, you've got to $verb it and never $verb.
+When you have a $noun, you've got to $verb it and never $verb.
 Nothing is $adj.
 Nothing is $noun.
 There is nothing $adj to they who will $verb.
