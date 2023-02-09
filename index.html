@@ -7,6 +7,7 @@
 	<script src="inspirator.js"></script> 
 </head>
 <body>
+	<canvas id="saveCanvas" width="600" height="350" style="display: none;"></canvas>
 	<nav role="navigation">
 		<div id="menuToggle">
 			<!--
@@ -39,7 +40,29 @@
 	<div class="area">
 		<label id="text" class="textarea">Inspire Me! <br> (Sonic &#x261D)</label>
 	</div>
-	<button class="generate-button" id="button" onclick="buttonGenerate()">Generate</button>
-	
+	<div>
+		<button class="generate-button" id="button" onclick="buttonGenerate()">Generate</button>
+		<button class="save-button" id="button" onclick="saveImage()">Save Quote</button>
+	</div>
+	<script>
+		function saveImage()
+		{
+			let label = document.getElementById("text");
+			if(label.innerText.includes("Sonic")) return;
+			let canvas = document.getElementById("saveCanvas");
+
+			let canvasUrl = canvas.toDataURL();
+
+			const El = document.createElement('a');
+			El.href = canvasUrl;
+
+			let today = new Date();
+
+			El.download = "inspirator"+today.valueOf();
+
+			El.click();
+			El.remove();
+		}
+	</script>
 </body>
 </html>
